@@ -3,26 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="NewsTrendings - Your source for breaking news, trending stories, and the latest updates from around the world.">
-    <meta name="keywords" content="news, trending, breaking news, world news, latest updates">
+    <meta name="description" content="NewsTrendings - Your source for breaking news, trending stories in health, finance, technology, and lifestyle.">
+    <meta name="keywords" content="news, trending, breaking news, health news, finance, technology, latest updates 2026">
     <meta name="author" content="NewsTrendings">
     
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://newstrendings.com/">
     <meta property="og:title" content="NewsTrendings - Breaking News & Trending Stories">
-    <meta property="og:description" content="Stay informed with the latest breaking news and trending stories from around the world.">
-    <meta property="og:image" content="https://www.freecodecamp.org/news/content/images/2020/03/open-graph-twitter-card.jpg">
-    
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://newstrendings.com/">
-    <meta name="twitter:title" content="NewsTrendings - Breaking News & Trending Stories">
-    <meta name="twitter:description" content="Stay informed with the latest breaking news and trending stories from around the world.">
-    <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/8/87/%25_of_Adults_Who_Get_News_from_Social_Media.png">
+    <meta property="og:description" content="Stay informed with the latest breaking news and trending stories in health, finance, and technology.">
+    <meta property="og:image" content="https://newstrendings.com/images/womens-longevity-health.jpg">
     
     <title>NewsTrendings - Breaking News & Trending Stories</title>
     
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <style>
+        .featured-story {
+            margin-bottom: 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+        .featured-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .news-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .card-image {
+            position: relative;
+            height: 200px;
+        }
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .category-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(255,255,255,0.95);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #667eea;
+        }
+        .category-badge.health { color: #667eea; }
+        .category-badge.finance { color: #f5576c; }
+        .category-badge.tech { color: #48bb78; }
+        .card-content {
+            padding: 20px;
+        }
+        .card-headline {
+            font-size: 18px;
+            margin: 0 0 12px 0;
+            line-height: 1.4;
+        }
+        .card-headline a {
+            color: #1a202c;
+            text-decoration: none;
+        }
+        .card-headline a:hover {
+            color: #667eea;
+        }
+        .card-excerpt {
+            color: #4a5568;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        .article-meta {
+            color: #718096;
+            font-size: 13px;
+            display: flex;
+            gap: 12px;
+        }
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 30px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #667eea;
+        }
+        @media (max-width: 768px) {
+            .featured-story {
+                grid-template-columns: 1fr;
+            }
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="site-header">
@@ -36,11 +127,11 @@
                 </div>
                 <nav class="main-nav">
                     <ul>
-                        <li><a href="#latest">Latest</a></li>
-                        <li><a href="#trending">Trending</a></li>
-                        <li><a href="#business">Business</a></li>
-                        <li><a href="#tech">Tech</a></li>
-                        <li><a href="#entertainment">Entertainment</a></li>
+                        <li><a href="/" class="active">Home</a></li>
+                        <li><a href="/health.html">Health</a></li>
+                        <li><a href="/finance.html">Finance</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -53,102 +144,98 @@
             <!-- Featured Story -->
             <section class="featured-story">
                 <div class="featured-image">
-                    <img src="images/placeholder-featured.jpg" alt="AI agents becoming digital coworkers" loading="lazy">
-                    <span class="category-badge">Featured</span>
+                    <img src="images/womens-longevity-health.jpg" alt="Women's longevity revolution">
                 </div>
                 <div class="featured-content">
-                    <h2 class="featured-headline">
-                        <a href="news/ai-agents-digital-coworkers-2026.html">
-                            AI Agents Are Becoming Your New Digital Coworkers: The 2026 Workplace Revolution
+                    <span class="category-badge health">Health</span>
+                    <h2 style="font-size: 36px; margin: 12px 0;">
+                        <a href="news/womens-longevity-revolution-2026.html" style="color: #1a202c; text-decoration: none;">
+                            The Women's Longevity Revolution: Why 2026 is the Year of Healthspan for Women
                         </a>
                     </h2>
-                    <p class="featured-excerpt">
-                        Agentic AI systems are revolutionizing workplaces in 2026, moving beyond simple copilots to autonomous digital coworkers handling complex multi-step tasks. Major tech companies are betting billions that these digital workers will redefine productivity and free humans for higher-level strategic work.
+                    <p style="color: #4a5568; font-size: 16px; line-height: 1.7; margin-bottom: 16px;">
+                        After decades of male-dominated longevity research, the field is finally pivoting to women's healthspan. Breakthrough discoveries about ovarian aging are driving a new wave of interventions tailored to women at every life stage.
                     </p>
                     <div class="article-meta">
-                        <span class="publish-date">May 2, 2026</span>
-                        <span class="read-time">7 min read</span>
+                        <span>📅 May 2, 2026</span>
+                        <span>⏱️ 7 min read</span>
                     </div>
                 </div>
             </section>
 
-            <!-- Latest News Grid -->
-            <section id="latest" class="news-section">
-                <h2 class="section-title">Latest News</h2>
+            <!-- Health & Wellness Section -->
+            <section id="health" class="news-section">
+                <h2 class="section-title">🏥 Health & Wellness</h2>
                 
                 <div class="news-grid">
                     
-                    <!-- Article 1: AI Agents -->
                     <article class="news-card">
                         <div class="card-image">
-                            <img src="images/placeholder-article.jpg" alt="AI agents in workplace" loading="lazy">
-                            <span class="category-badge tech">Technology</span>
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-headline">
-                                <a href="news/ai-agents-digital-coworkers-2026.html">
-                                    AI Agents Are Becoming Your New Digital Coworkers
-                                </a>
-                            </h3>
-                            <p class="card-excerpt">
-                                From simple assistants to autonomous decision-makers, agentic AI is transforming how businesses operate with systems that can independently manage complex workflows.
-                            </p>
-                            <div class="article-meta">
-                                <span class="publish-date">May 2, 2026</span>
-                                <span class="read-time">7 min read</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Article 2: GLP-1 Drugs -->
-                    <article class="news-card">
-                        <div class="card-image">
-                            <img src="images/placeholder-article.jpg" alt="GLP-1 medical breakthrough" loading="lazy">
+                            <img src="images/glp1-medical-breakthrough.jpg" alt="GLP-1 drugs">
                             <span class="category-badge health">Health</span>
                         </div>
                         <div class="card-content">
                             <h3 class="card-headline">
                                 <a href="news/glp1-drugs-beyond-weight-loss-2026.html">
-                                    GLP-1 Drugs: The Medical Breakthrough Beyond Weight Loss
+                                    GLP-1 Drugs: The Medical Breakthrough Extending Far Beyond Weight Loss
                                 </a>
                             </h3>
                             <p class="card-excerpt">
-                                GLP-1 medications are revealing unexpected benefits across heart health, kidney disease, arthritis, and addiction treatment—extending far beyond their weight loss origins.
+                                From heart health to addiction treatment, GLP-1 medications are emerging as one of 2026's most significant health trends with benefits far beyond weight loss.
                             </p>
                             <div class="article-meta">
-                                <span class="publish-date">May 2, 2026</span>
-                                <span class="read-time">6 min read</span>
+                                <span>📅 May 2, 2026</span>
+                                <span>⏱️ 6 min</span>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Article 3: K-Shaped Economy -->
                     <article class="news-card">
                         <div class="card-image">
-                            <img src="images/placeholder-article.jpg" alt="Economic inequality visualization" loading="lazy">
-                            <span class="category-badge business">Business & Economy</span>
+                            <img src="images/microplastics-blood-cells.jpg" alt="Microplastics in blood">
+                            <span class="category-badge health">Health</span>
                         </div>
                         <div class="card-content">
                             <h3 class="card-headline">
-                                <a href="news/k-shaped-economy-wealth-divide-2026.html">
-                                    The K-Shaped Economy: America's Deepening Wealth Divide
+                                <a href="news/microplastics-blood-health-crisis-2026.html">
+                                    Microplastics in Your Blood: The Silent Health Crisis Doctors Are Finally Addressing
                                 </a>
                             </h3>
                             <p class="card-excerpt">
-                                High-income households are thriving with improving credit and spending power, while lower-income Americans face mounting costs, rising debt, and economic stagnation.
+                                Found in blood, lungs, and brain tissue, microplastic contamination has emerged as a direct human health threat. Medical clinics now offer testing and treatment.
                             </p>
                             <div class="article-meta">
-                                <span class="publish-date">May 2, 2026</span>
-                                <span class="read-time">6 min read</span>
+                                <span>📅 May 2, 2026</span>
+                                <span>⏱️ 6 min</span>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Article 4: Multi-Cancer Blood Test -->
                     <article class="news-card">
                         <div class="card-image">
-                            <img src="images/placeholder-article.jpg" alt="Cancer screening breakthrough" loading="lazy">
-                            <span class="category-badge science">Health & Science</span>
+                            <img src="images/anti-aging-biotech-lab.jpg" alt="Anti-aging biotech">
+                            <span class="category-badge health">Health</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-headline">
+                                <a href="news/anti-aging-biotech-120-billion-industry-2026.html">
+                                    The $120 Billion Anti-Aging Industry: From Rapamycin to Epigenetic Reprogramming
+                                </a>
+                            </h3>
+                            <p class="card-excerpt">
+                                The anti-aging industry is moving from cosmetics to cutting-edge science with breakthroughs that could add decades to human healthspan.
+                            </p>
+                            <div class="article-meta">
+                                <span>📅 May 2, 2026</span>
+                                <span>⏱️ 8 min</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="card-image">
+                            <img src="images/cancer-blood-test-lab.jpg" alt="Cancer blood test">
+                            <span class="category-badge health">Health</span>
                         </div>
                         <div class="card-content">
                             <h3 class="card-headline">
@@ -157,20 +244,19 @@
                                 </a>
                             </h3>
                             <p class="card-excerpt">
-                                Revolutionary multi-cancer screening technology could transform early detection. New research shows a single blood sample may identify liver, stomach, lung, and other cancers before symptoms appear.
+                                Multi-cancer early detection tests are moving from research labs to doctor's offices, promising to revolutionize cancer screening.
                             </p>
                             <div class="article-meta">
-                                <span class="publish-date">May 2, 2026</span>
-                                <span class="read-time">5 min read</span>
+                                <span>📅 May 2, 2026</span>
+                                <span>⏱️ 5 min</span>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Article 5: Food as Medicine -->
                     <article class="news-card">
                         <div class="card-image">
-                            <img src="images/placeholder-article.jpg" alt="Mediterranean diet healthy meals" loading="lazy">
-                            <span class="category-badge lifestyle">Lifestyle & Wellness</span>
+                            <img src="images/food-as-medicine-healthy.jpg" alt="Food as medicine">
+                            <span class="category-badge health">Health</span>
                         </div>
                         <div class="card-content">
                             <h3 class="card-headline">
@@ -179,33 +265,121 @@
                                 </a>
                             </h3>
                             <p class="card-excerpt">
-                                The "Food as Medicine" movement is reshaping healthcare, with physicians prescribing Mediterranean diets and whole foods to prevent and treat chronic diseases.
+                                Physicians are increasingly prescribing specific foods to treat and prevent disease, recognizing nutrition as powerful medicine.
                             </p>
                             <div class="article-meta">
-                                <span class="publish-date">May 2, 2026</span>
-                                <span class="read-time">6 min read</span>
+                                <span>📅 May 2, 2026</span>
+                                <span>⏱️ 6 min</span>
                             </div>
                         </div>
                     </article>
 
-                </div> <!-- End news-grid -->
-            </section>
-
-            <!-- Trending Section -->
-            <section id="trending" class="trending-section">
-                <h2 class="section-title">🔥 Trending Now</h2>
-                <div class="trending-list">
-                    <ol>
-                        <li><a href="news/ai-agents-digital-coworkers-2026.html">AI Agents Are Becoming Your New Digital Coworkers: The 2026 Workplace Revolution</a></li>
-                        <li><a href="news/glp1-drugs-beyond-weight-loss-2026.html">GLP-1 Drugs: The Medical Breakthrough Extending Far Beyond Weight Loss</a></li>
-                        <li><a href="news/multi-cancer-blood-test-breakthrough-2026.html">Single Blood Test Could Soon Detect Multiple Cancers Early: A Medical Game-Changer</a></li>
-                        <li><a href="news/k-shaped-economy-wealth-divide-2026.html">The K-Shaped Economy: America's Deepening Wealth Divide in 2026</a></li>
-                        <li><a href="news/food-as-medicine-movement-2026.html">Food as Medicine: Why Doctors Are Prescribing Meals Instead of Pills in 2026</a></li>
-                    </ol>
                 </div>
             </section>
 
-        </div> <!-- End container -->
+            <!-- Finance & Business Section -->
+            <section id="finance" class="news-section">
+                <h2 class="section-title">💰 Finance & Business</h2>
+                
+                <div class="news-grid">
+                    
+                    <article class="news-card">
+                        <div class="card-image">
+                            <img src="images/retirement-401k-planning.jpg" alt="Retirement 401k">
+                            <span class="category-badge finance">Finance</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-headline">
+                                <a href="news/retirement-401k-makeover-2026.html">
+                                    The Retirement Crisis: Why 401(k)s Are Getting a Major Makeover in 2026
+                                </a>
+                            </h3>
+                            <p class="card-excerpt">
+                                SECURE 2.0 provisions, AI-powered advice, and new tax benefits are transforming retirement planning for millions of Americans.
+                            </p>
+                            <div class="article-meta">
+                                <span>📅 May 2, 2026</span>
+                                <span>⏱️ 8 min</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="card-image">
+                            <img src="images/k-shaped-economy-inequality.jpg" alt="K-shaped economy">
+                            <span class="category-badge finance">Finance</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-headline">
+                                <a href="news/k-shaped-economy-wealth-divide-2026.html">
+                                    The K-Shaped Economy: Why America's Wealth Divide Keeps Growing
+                                </a>
+                            </h3>
+                            <p class="card-excerpt">
+                                Affluent Americans see surging portfolios while working families face persistent inflation. The K-shaped recovery is reshaping society.
+                            </p>
+                            <div class="article-meta">
+                                <span>📅 May 2, 2026</span>
+                                <span>⏱️ 7 min</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Technology Section -->
+            <section id="tech" class="news-section">
+                <h2 class="section-title">💻 Technology</h2>
+                
+                <div class="news-grid">
+                    
+                    <article class="news-card">
+                        <div class="card-image">
+                            <img src="images/ai-agents-workplace.jpg" alt="AI agents">
+                            <span class="category-badge tech">Technology</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-headline">
+                                <a href="news/ai-agents-digital-coworkers-2026.html">
+                                    AI Agents Are Becoming Your New Digital Coworkers: The 2026 Workplace Revolution
+                                </a>
+                            </h3>
+                            <p class="card-excerpt">
+                                Agentic AI systems are revolutionizing workplaces, moving beyond copilots to autonomous digital workers handling complex tasks.
+                            </p>
+                            <div class="article-meta">
+                                <span>📅 May 2, 2026</span>
+                                <span>⏱️ 7 min</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="card-image">
+                            <img src="images/ai-datacenter-clean-energy.jpg" alt="AI energy">
+                            <span class="category-badge tech">Technology</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-headline">
+                                <a href="news/ai-energy-clean-power-revolution-2026.html">
+                                    AI Ate My Energy Bill: How Data Centers Are Driving a Clean Energy Revolution
+                                </a>
+                            </h3>
+                            <p class="card-excerpt">
+                                AI's massive energy appetite is paradoxically accelerating the transition to renewable power and smart grid technology.
+                            </p>
+                            <div class="article-meta">
+                                <span>📅 May 2, 2026</span>
+                                <span>⏱️ 7 min</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+        </div>
     </main>
 
     <footer class="site-footer">
@@ -218,11 +392,10 @@
                 <div class="footer-section">
                     <h4>Categories</h4>
                     <ul>
-                        <li><a href="#business">Business</a></li>
-                        <li><a href="#tech">Technology</a></li>
-                        <li><a href="#entertainment">Entertainment</a></li>
-                        <li><a href="#sports">Sports</a></li>
-                        <li><a href="#world">World News</a></li>
+                        <li><a href="/health.html">Health</a></li>
+                        <li><a href="/finance.html">Finance</a></li>
+                        <li><a href="/#tech">Technology</a></li>
+                        <li><a href="/#lifestyle">Lifestyle</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
