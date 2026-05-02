@@ -1,0 +1,165 @@
+# ============================================
+# NewsTrendings - Git Ignore File
+# ============================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ============================================
+# Editor / IDE
+# ============================================
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ============================================
+# Node.js (if you add build tools later)
+# ============================================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# ============================================
+# Build / Dist (if you add build process)
+# ============================================
+
+dist/
+build/
+.cache/
+.parcel-cache/
+
+# ============================================
+# Environment & Secrets
+# ============================================
+
+.env
+.env.local
+.env.development
+.env.production
+secrets.json
+config.local.js
+
+# API Keys (just in case)
+*-api-key.txt
+*-secret.txt
+
+# ============================================
+# Temporary Files
+# ============================================
+
+*.tmp
+*.temp
+*.log
+*.bak
+*.backup
+
+# ============================================
+# Image Editing
+# ============================================
+
+# Photoshop
+*.psd
+*.psb
+
+# GIMP
+*.xcf
+
+# Sketch
+*.sketch
+
+# ============================================
+# Analytics & Tracking (local testing)
+# ============================================
+
+analytics-*.json
+tracking-*.json
+
+# ============================================
+# Deployment
+# ============================================
+
+.vercel
+.netlify
+.cloudflare/
+
+# ============================================
+# Testing
+# ============================================
+
+coverage/
+.nyc_output/
+*.test.js
+*.spec.js
+
+# ============================================
+# Optional: Draft Content
+# ============================================
+
+# Uncomment if you want to keep drafts local
+# drafts/
+# .drafts/
+# *-draft.html
+
+# ============================================
+# Optional: Large Media Files
+# ============================================
+
+# Uncomment if you want to host images elsewhere
+# *.mov
+# *.mp4
+# *.avi
+
+# Large images (> 5MB typically)
+# Uncomment if needed
+# *.psd
+# *.ai
+
+# ============================================
+# System / Misc
+# ============================================
+
+.sass-cache/
+*.map
+*.orig
