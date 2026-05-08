@@ -443,6 +443,22 @@
 
     <script src="../js/main.js"></script>
 
+<!-- Taboola Click ID Tracking -->
+<script>
+(function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var tblci = urlParams.get('tblci') || urlParams.get('click_id') || '';
+    if (tblci) {
+        document.querySelectorAll('a[href*="hop.clickbank.net"]').forEach(function(link) {
+            var href = link.getAttribute('href');
+            if (href.indexOf('tblci=') === -1) {
+                var separator = href.indexOf('?') !== -1 ? '&' : '?';
+                link.setAttribute('href', href + separator + 'tblci=' + encodeURIComponent(tblci));
+            }
+        });
+    }
+})();
+</script>
 </body>
 </html>
 
